@@ -1,0 +1,172 @@
+:root {
+  --text-color: #1f2128;
+  --gray-1: #1f2128;
+  --gray-2: #1f2128;
+  --gray-3: #1f2128;
+  --gray-4: #1f2128;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18.2px;
+  display: flex;
+  justify-content: center;
+  color: var(--text-color);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 6px;
+  border: 1px solid #eeeeee;
+  padding: 10px 0 10px 0;
+  margin: 85px 0 0 0;
+  box-shadow: 0px 0px 4px 0px #1414141a, 0px 8px 15px 0px #1414141f;
+  width: 370px;
+}
+
+.custom-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* DEFAULT */
+.item label .svg {
+  fill: white;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* NOT CHECKED */
+.custom-checkbox:not(:checked) + label:not(:hover) .svg {
+  fill: white;
+  stroke: #bdbdbd;
+}
+
+.custom-checkbox:not(:checked) + label:not(:hover) .svg .box-shadow {
+  stroke: transparent;
+}
+
+.custom-checkbox:not(:checked) + label:not(:hover) .svg .check {
+  stroke: transparent;
+}
+
+/* NOT CHECKED & HOVER */
+.custom-checkbox:not(:checked) + label:hover .svg .box-border {
+  stroke: #bdbdbd;
+}
+
+.custom-checkbox:not(:checked) + label:hover .svg .check {
+  stroke: #e3e3e3;
+}
+
+.custom-checkbox:not(:checked) + label:hover .svg .box-shadow {
+  stroke: transparent;
+}
+
+/* NOT CHECKED & CLICKING */
+.custom-checkbox:not(:checked) + label:active .svg .box-border {
+  stroke: #bdbdbd;
+}
+
+.custom-checkbox:not(:checked) + label:active .svg .check {
+  stroke: #878787;
+}
+
+.custom-checkbox:not(:checked) + label:active .svg .box-shadow {
+  stroke: #2469f6;
+}
+
+/* CHECKED */
+.custom-checkbox:checked + label:not(:active) .svg {
+  fill: #5087f8;
+  opacity: 100%;
+}
+
+.custom-checkbox:checked + label:not(:active) .svg .box-border {
+  stroke: #5087f8;
+  opacity: 100%;
+}
+
+.custom-checkbox:checked + label:not(:active) .svg .box-shadow {
+  stroke: transparent;
+  opacity: 0;
+}
+
+.custom-checkbox:checked + label:not(:active) .svg .check {
+  stroke: white;
+  fill: none;
+}
+
+/* CHECKED & HOVER */
+.custom-checkbox:checked + label:hover .svg .check {
+  stroke: white;
+}
+
+.custom-checkbox:checked + label:hover .svg {
+  fill: #2469f6;
+}
+
+.custom-checkbox:checked + label:hover .svg .box-border {
+  stroke: #2469f6;
+  opacity: 100%;
+}
+
+.custom-checkbox:checked + label:hover .svg .box-shadow {
+  stroke: transparent;
+  opacity: 0;
+}
+
+.custom-checkbox:checked + label:hover .svg .check {
+  stroke: white;
+  opacity: 100%;
+}
+
+/* CHECKED & CLICKING */
+.custom-checkbox:checked + label:active .svg {
+  fill: #5087f8;
+}
+
+.custom-checkbox:checked + label:active .svg .box-border {
+  stroke: #5087f8;
+}
+
+.custom-checkbox:checked + label:active .svg .box-shadow {
+  stroke: #2469f6;
+  opacity: 10%;
+}
+
+.custom-checkbox:checked + label:active .svg .check {
+  stroke: white;
+  fill: none;
+}
+
+.item {
+  padding: 8px 15px 8px 22px;
+  height: 26px;
+}
+
+.item label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+#seperator {
+  height: 20px;
+  padding: 0 15px 0 15px;
+  display: flex;
+  align-items: center;
+}
+
+#seperator-line {
+  height: 0.7px;
+  background-color: #cdcdcd;
+  width: 100%;
+}
