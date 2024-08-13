@@ -18,7 +18,8 @@ body {
   color: var(--text-color);
 }
 
-.form-container {
+.form-container,
+#component-container {
   display: flex;
   flex-direction: column;
   align-items: stretch;
