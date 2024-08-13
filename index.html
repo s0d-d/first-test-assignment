@@ -14,12 +14,7 @@
   <body>
     <form class="form-container" id="my-form">
       <div class="item">
-        <input
-          type="checkbox"
-          class="custom-checkbox"
-          id="selectAll"
-          onclick="toggleCheckboxes(this)"
-        />
+        <input type="checkbox" class="custom-checkbox" id="selectAll" />
         <label for="selectAll">
           <span class="item-label">All Pages</span>
           <svg
@@ -65,12 +60,7 @@
         <div id="seperator-line"></div>
       </div>
       <div class="item">
-        <input
-          type="checkbox"
-          class="custom-checkbox"
-          id="custom-checkbox-1"
-          onclick="checkSelectAll()"
-        />
+        <input type="checkbox" class="custom-checkbox" id="custom-checkbox-1" />
         <label for="custom-checkbox-1">
           <span class="item-label">Page 1</span>
           <svg
@@ -114,12 +104,7 @@
       </div>
 
       <div class="item">
-        <input
-          type="checkbox"
-          class="custom-checkbox"
-          id="custom-checkbox-2"
-          onclick="checkSelectAll()"
-        />
+        <input type="checkbox" class="custom-checkbox" id="custom-checkbox-2" />
         <label for="custom-checkbox-2">
           <span class="item-label">Page 2</span>
           <svg
@@ -162,12 +147,7 @@
         </label>
       </div>
       <div class="item">
-        <input
-          type="checkbox"
-          class="custom-checkbox"
-          id="custom-checkbox-3"
-          onclick="checkSelectAll()"
-        />
+        <input type="checkbox" class="custom-checkbox" id="custom-checkbox-3" />
         <label for="custom-checkbox-3">
           <span class="item-label">Page 3</span>
           <svg
@@ -210,12 +190,7 @@
         </label>
       </div>
       <div class="item">
-        <input
-          type="checkbox"
-          class="custom-checkbox"
-          id="custom-checkbox-4"
-          onclick="checkSelectAll()"
-        />
+        <input type="checkbox" class="custom-checkbox" id="custom-checkbox-4" />
         <label for="custom-checkbox-4">
           <span class="item-label">Page 4</span>
           <svg
@@ -279,12 +254,28 @@
         document.getElementById("selectAll").checked = allChecked;
       }
 
-      document
-        .getElementById("my-form")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-          console.log("Form submission prevented!");
-        });
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("selectAll")
+          .addEventListener("click", function () {
+            toggleCheckboxes(this);
+          });
+
+        document
+          .querySelectorAll(".custom-checkbox:not(#selectAll)")
+          .forEach(function (checkbox) {
+            checkbox.addEventListener("click", function () {
+              checkSelectAll();
+            });
+          });
+
+        document
+          .getElementById("my-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            console.log("Form submission prevented!");
+          });
+      });
     </script>
   </body>
 </html>

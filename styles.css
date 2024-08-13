@@ -191,6 +191,7 @@ body {
   line-height: 18.2px;
   outline: none; /* Remove default outline */
   box-shadow: none; /* Remove any default box shadow */
+  cursor: pointer;
 }
 
 .primary-button:hover {
