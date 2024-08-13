@@ -1,5 +1,7 @@
 :root {
   --text-color: #1f2128;
+  --primary-color: #ffce22;
+  --primary-color-hover: #ffd84d;
   --gray-1: #1f2128;
   --gray-2: #1f2128;
   --gray-3: #1f2128;
@@ -41,6 +43,10 @@ body {
   border-radius: 6px;
   overflow: hidden;
 }
+
+/* .item label .svg .check {
+  transition: stroke 0.2s ease-out;
+} */
 
 /* NOT CHECKED */
 .custom-checkbox:not(:checked) + label:not(:hover) .svg {
@@ -169,4 +175,28 @@ body {
   height: 0.7px;
   background-color: #cdcdcd;
   width: 100%;
+}
+
+.primary-button {
+  margin: 10px 15px 10px 15px;
+  padding: 10px 20px 10px 20px;
+  height: 40px;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 4px;
+  transition: transform 0.2s ease-out;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18.2px;
+  outline: none; /* Remove default outline */
+  box-shadow: none; /* Remove any default box shadow */
+}
+
+.primary-button:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.primary-button:active {
+  transform: translateY(1px);
 }
